@@ -7,3 +7,7 @@ This repository contains various pieces of GDScript code, often with example usa
 ## Contributing
 
 If you'd like to contribute code of your own that you feel others might find useful, feel free to make a pull request. Note that this means releasing that code under the repository's license, and acknowledging that you have the rights to release the code under said license.
+
+## Code Style
+
+All samples in this repository use typed GDScript.
