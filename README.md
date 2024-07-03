@@ -11,3 +11,6 @@ If you'd like to contribute code of your own that you feel others might find use
 ## Code Style
 
 All samples in this repository use typed GDScript.
+* Class names: PascalCase
+* Variable names: snake_case
+* Function names: snake_case
