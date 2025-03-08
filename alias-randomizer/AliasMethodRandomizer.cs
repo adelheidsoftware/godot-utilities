@@ -5,17 +5,8 @@ public class AliasMethodRandomizer {
 	private int[] alias;
 	private float[] probability;
 
-	// O(1) time complexity.
-	public int next() {
-		var r = new Random(Guid.NewGuid().GetHashCode());
-		int column = r.Next(0, probability.Length);
-		bool coinToss = r.NextDouble() < probability[column];
-
-		return coinToss ? column : alias[column];
-	}
-
 	// O(n) time complexity, but only happens once upon initialization. Only need to re-initialize if weights (input probabilities) change.
-	private void init(float[] inputProbabilities) {
+	public AliasMethodRandomizer(float[] inputProbabilities) {
 		probability = new float[inputProbabilities.Length];
 		alias = new int[inputProbabilities.Length];
 
@@ -61,5 +52,14 @@ public class AliasMethodRandomizer {
 		while (large.Count != 0) {
 			probability[large.Pop()] = 1.0f;
 		}
+	}
+
+	// O(1) time complexity.
+	public int next() {
+		var r = new Random(Guid.NewGuid().GetHashCode());
+		int column = r.Next(0, probability.Length);
+		bool coinToss = r.NextDouble() < probability[column];
+
+		return coinToss ? column : alias[column];
 	}
 }
