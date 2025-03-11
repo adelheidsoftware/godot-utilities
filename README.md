@@ -14,3 +14,5 @@ All samples in this repository that use GDScript are fully typed and obey these 
 * Class names: PascalCase
 * Variable names: snake_case
 * Function names: snake_case
+
+For C# code, we generally stick with Java-style naming conventions, rather than C# naming conventions.
